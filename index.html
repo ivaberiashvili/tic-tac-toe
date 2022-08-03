@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Frontend Mentor | Tic Tac Toe</title>
+</head>
+<body>
+  <!-- temporary button for switching pages -->
+  <button id="switch-page" onclick="switchPage()"><></button>
+ <!-- /***START MENU***/ -->
+  <section id="start-menu-page" class="start-menu page">
+    <div class="start-menu-container container">
+      
+      <div class="logo">
+          <img src="./assets/logo.svg" alt="">
+      </div> 
+      <div class="start-choose-player">
+          <h2>Pick player 1's mark</h2>
+          <div class="choice-box-container">
+            <div class="choice-box">
+              <div id="btn-overlay" class="btn-overlay-shape"></div>
+              <button id="toggle-x" class="toggle-btn-x">
+                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <path id="choose-x" d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/>
+                </svg>
+              </button>
+              <button id="toggle-o" class="toggle-btn-o">
+                <svg  width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <path id="choose-o" d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" fill="#F2B137"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <p class="body-text">Remember: X goes first</p>
+      </div>
+      <button id="button-cpu" class="button-1">New Game (vs CPU)</button>
+      <button id="button-multiplayer" class="button-2">New Game (vs player)</button>
+    </div>
+  </section>
+  <!-- /***START MENU***/ end -->
+
+  <!-- /**GAME BOARD***/ -->
+  <section id="game-board-page" class="game-board page">
+    <div class="game-board-container container">
+      <nav class="navbar">
+        <div class="logo-start">
+          <img src="./assets/logo.svg" alt="">
+        </div>
+        <div class="whose-turn"> 
+          <svg id="turn-shape-x" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+            <path class="turn-shape" d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/>
+          </svg>
+          <svg id="turn-shape-o" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+            <path class="turn-shape" d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" fill="#F2B137"/>
+          </svg>
+          <span>turn</span>
+        </div>
+        <button id="restart" class="button-restart">
+          <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.524 0h-1.88a.476.476 0 0 0-.476.499l.159 3.284A9.81 9.81 0 0 0 9.835.317C4.415.317-.004 4.743 0 10.167.004 15.597 4.406 20 9.835 20a9.796 9.796 0 0 0 6.59-2.536.476.476 0 0 0 .019-.692l-1.348-1.349a.476.476 0 0 0-.65-.022 6.976 6.976 0 0 1-9.85-.63 6.987 6.987 0 0 1 .63-9.857 6.976 6.976 0 0 1 10.403 1.348l-4.027-.193a.476.476 0 0 0-.498.476v1.881c0 .263.213.476.476.476h7.944A.476.476 0 0 0 20 8.426V.476A.476.476 0 0 0 19.524 0Z" fill="#1F3641"/>
+          </svg>
+        </button>
+      </nav>
+      <section id="board" class="board">
+        <div id="0" class="cell" data-cell>
+          <svg class="shape-x" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/>
+          </svg>
+        </div>
+        <div id="1" class="cell" data-cell>
+          <svg class="shape-o" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" fill="#F2B137"/>
+          </svg>
+        </div>
+        <div id="3" class="cell" data-cell>
+          <svg class="outline-x" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M51.12 1.269c.511 0 1.023.195 1.414.586l9.611 9.611c.391.391.586.903.586 1.415s-.195 1.023-.586 1.414L44.441 32l17.704 17.705c.391.39.586.902.586 1.414 0 .512-.195 1.024-.586 1.415l-9.611 9.611c-.391.391-.903.586-1.415.586a1.994 1.994 0 0 1-1.414-.586L32 44.441 14.295 62.145c-.39.391-.902.586-1.414.586a1.994 1.994 0 0 1-1.415-.586l-9.611-9.611a1.994 1.994 0 0 1-.586-1.415c0-.512.195-1.023.586-1.414L19.559 32 1.855 14.295a1.994 1.994 0 0 1-.586-1.414c0-.512.195-1.024.586-1.415l9.611-9.611c.391-.391.903-.586 1.415-.586s1.023.195 1.414.586L32 19.559 49.705 1.855c.39-.391.902-.586 1.414-.586Z" stroke="#31C3BD" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div id="4" class="cell" data-cell>
+          <svg class="outline-o" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <path  d="M33 1c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C15.327 65 1 50.673 1 33 1 15.327 15.327 1 33 1Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" stroke="#F2B137" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div id="5" class="cell" data-cell></div>
+        <div id="6" class="cell" data-cell></div>
+        <div id="7" class="cell" data-cell></div>
+        <div id="8" class="cell" data-cell></div>
+        <div id="9" class="cell" data-cell></div>
+        <!-- **stats** -->
+        <div id="x-wins" class="stats">
+          <p class="body-text">X(<span>You</span>)</p>
+          <h3>0</h3>
+        </div>
+        <div id="tie-number" class="stats">
+          <p class="body-text">Ties</p>
+          <h3>0</h3></div>
+        <div id="o-wins" class="stats">
+          <p class="body-text">O(<span>CPU</span>)</p>
+          <h3>0</h3>
+        </div>
+      </section>
+      <div class="hide-temporary">
+                <!-- **messages** -->
+
+        <!-- Your score -->
+        <!-- Ties score -->
+        <!-- CPU score -->
+
+        Oh no, you lost
+        You won!
+        Player <!-- 1/2 --> wins!
+
+        <!-- x/o icon --> takes the round
+        Round tied
+        Restart game?
+
+        Quit
+        Next round
+        No, cancel
+        Yes, restart
+      </div>
+
+    </div>
+  </section>
+  <!-- /**GAME BOARD***/ end -->
+<script src="main.js"></script>
+</body>
+</html>
